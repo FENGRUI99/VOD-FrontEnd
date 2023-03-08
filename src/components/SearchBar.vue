@@ -1,9 +1,9 @@
 <script setup>
-import { Calendar, Search } from '@element-plus/icons-vue'
+import {Search} from '@element-plus/icons-vue'
 </script>
 
 <template>
-  <el-input v-model="input" placeholder="Please input" :suffix-icon="Search" @keyup.enter.native="sendRequest" :style="{ width: '100%' }" ></el-input>
+  <el-input v-model="input" placeholder="Please input" :suffix-icon="Search" @keyup.enter.native="toDetailView" :style="{ width: '100%'}" size = 'large'></el-input>
 </template>
 
 <script>
@@ -20,10 +20,17 @@ export default {
       this.axios.get('http://localhost:18343/' + this.input).then((response) => {
         // console.log(this.$store.getters.getItems)
         console.log(response.data)
+        this.toDetailView()
       }).catch((response) => {
         console.log(response)
       })
-    }
+    },
+    toDetailView () {
+      this.$router.push({
+        path: '/detailView',
+        name: 'DetailView',
+      })
+    },
   }
 }
 </script>

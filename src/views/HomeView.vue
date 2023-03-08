@@ -6,14 +6,12 @@
         </el-header>
         <el-container style="display: flex" >
         <el-main style = "overflow: clip">
-          <div v-for="(item,index) in items" v-bind:key="index">
-            <div class="card-container">
-              <card :title = "item" @click="toDetailView"></card>
-              <card :title = "item" @click="toDetailView"></card>
-              <card :title = "item" @click="toDetailView"></card>
-              <card :title = "item" @click="toDetailView"></card>
+          <div class="card-group">
+            <div class="card-row" v-for="(item,index) in items" v-bind:key="index">
+                <card class="card" :title = "item" @click="toDetailView"></card>
             </div>
           </div>
+
         </el-main>
         </el-container>
       </el-container>
@@ -65,17 +63,20 @@ export default {
 </script>
 
 <style scoped>
-.el-container{
-  min-width: fit-content;
-}
+   .el-container{
+     min-width: fit-content;
+   }
 
-.card-container {
-  display: flex;
-  justify-content: space-between; /* evenly distribute labels */
-}
+   .card-group {
+     display: flex;
+     flex-wrap: wrap;
+   }
 
-card {
-  width: 23%; /* set width to fit four labels in a row */
-  text-align: center; /* center label text */
-}
+   .card-row {
+     width: 25%;
+     box-sizing: border-box;
+     padding: 10px;
+   }
+
+
 </style>

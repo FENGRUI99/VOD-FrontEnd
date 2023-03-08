@@ -1,32 +1,39 @@
 <template>
-<!--  <el-row>-->
-      <el-card :body-style="{ padding: '0px' }" shadow="always">
+      <el-card :body-style="{ padding: '0px'}" class="my-card" @mouseenter="zoomIn" @mouseleave="zoomOut" shadow="hover" style="width: 100%;height: 100%;border-radius: 8px" :style="{boxShadow: '--el-box-shadow-dark'}">
         <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
             class="image"
         />
-        <div style="padding: 14px">
+        <div style="padding: 1px; font-size: small" >
           <span>{{title}}</span>
         </div>
       </el-card>
-<!--  </el-row>-->
+
 </template>
 
-<script setup>
-</script>
 <script>
 export default {
   name: 'Card',
   props:{
     title: String
-  }
+  },
+  methods: {
+    zoomIn(event) {
+      event.currentTarget.style.transform = "scale(1.2)"; // Zoom in by 20%
+    },
+    zoomOut(event) {
+      event.currentTarget.style.transform = "scale(1)"; // Reset to original size
+    },
+  },
 }
 </script>
 <style>
-
-
+.my-card {
+  transition: transform 0.3s ease; /* Add smooth transition when zooming in/out */
+}
 .image {
   width: 100%;
-  display: block;
+  /*height: 10%;*/
+  display: flex;
 }
 </style>
