@@ -1,20 +1,20 @@
 <template>
-  <video-player :style="{ width: '1000px', height: '400px' }"></video-player>
-<!--    <el-container>-->
-<!--      <el-header>-->
-<!--        <search-bar></search-bar>-->
-<!--      </el-header>-->
-<!--      <el-container>-->
-<!--        <el-main>-->
-<!--          <video-player :style="{ width: '1000px', height: '400px' }"></video-player>-->
-<!--        </el-main>-->
-<!--        <el-aside width="200px">-->
-<!--          <div v-for="(item,index) in items" v-bind:key="index">-->
-<!--            <card :title = "item" @click="toDetailView"></card>-->
-<!--          </div>-->
-<!--      </el-aside>-->
-<!--    </el-container>-->
-<!--  </el-container>-->
+<!--  <video-player></video-player>-->
+    <el-container>
+      <el-header>
+        <search-bar></search-bar>
+      </el-header>
+      <el-container>
+        <el-main>
+          <video-player></video-player>
+        </el-main>
+        <el-aside width="200px">
+          <div v-for="(item,index) in items" v-bind:key="index">
+            <card :title = "item" @click="toDetailView"></card>
+          </div>
+        </el-aside>
+    </el-container>
+  </el-container>
 </template>
 
 <script>
@@ -39,7 +39,6 @@ export default {
         path: '/',
         name: 'HomeView',
       })
-      // this.$router.push('/detailView')
     },
   },
 }

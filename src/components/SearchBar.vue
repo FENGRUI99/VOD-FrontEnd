@@ -3,7 +3,7 @@ import { Calendar, Search } from '@element-plus/icons-vue'
 </script>
 
 <template>
-  <el-input v-model="input" placeholder="Please input" :suffix-icon="Search" @keyup.enter.native="sendRequest"></el-input>
+  <el-input v-model="input" placeholder="Please input" :suffix-icon="Search" @keyup.enter.native="sendRequest" :style="{ width: '640px' }" ></el-input>
 </template>
 
 <script>
