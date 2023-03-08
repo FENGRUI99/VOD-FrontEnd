@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+<!--  <el-row>-->
       <el-card :body-style="{ padding: '0px' }" shadow="always">
         <img
             src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
@@ -9,7 +9,7 @@
           <span>{{title}}</span>
         </div>
       </el-card>
-  </el-row>
+<!--  </el-row>-->
 </template>
 
 <script setup>

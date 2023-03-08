@@ -4,11 +4,18 @@
         <el-header>
           <searchBar></searchBar>
         </el-header>
-        <el-main>
+        <el-container style="display: flex" >
+        <el-main style = "overflow: clip">
           <div v-for="(item,index) in items" v-bind:key="index">
-            <card :title = "item" @click="toDetailView"></card>
+            <div class="card-container">
+              <card :title = "item" @click="toDetailView"></card>
+              <card :title = "item" @click="toDetailView"></card>
+              <card :title = "item" @click="toDetailView"></card>
+              <card :title = "item" @click="toDetailView"></card>
+            </div>
           </div>
         </el-main>
+        </el-container>
       </el-container>
     </div>
 
@@ -58,5 +65,17 @@ export default {
 </script>
 
 <style scoped>
+.el-container{
+  min-width: fit-content;
+}
 
+.card-container {
+  display: flex;
+  justify-content: space-between; /* evenly distribute labels */
+}
+
+card {
+  width: 23%; /* set width to fit four labels in a row */
+  text-align: center; /* center label text */
+}
 </style>

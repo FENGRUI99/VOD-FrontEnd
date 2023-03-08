@@ -33,7 +33,7 @@ const options = reactive({
     <vue3VideoPlay
         v-bind="options"
         poster="https://cdn.jsdelivr.net/gh/xdlumia/files/video-play/ironMan.jpg"
-        :style="{ width: '640px', height: '360px' }"
+        :style="{ width: w, height: h }"
     />
   </div>
 </template>
@@ -41,6 +41,7 @@ const options = reactive({
 <script>
 export default {
   name: "VideoPlayer",
+  props:['w', 'h'],
 }
 </script>
 

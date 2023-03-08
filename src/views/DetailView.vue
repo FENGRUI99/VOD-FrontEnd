@@ -1,14 +1,13 @@
 <template>
-<!--  <video-player></video-player>-->
     <el-container>
       <el-header>
         <search-bar></search-bar>
       </el-header>
-      <el-container>
-        <el-main>
-          <video-player></video-player>
+      <el-container style="display: flex" >
+        <el-main style = "overflow: clip;">
+          <video-player w="100%" h="100%"></video-player>
         </el-main>
-        <el-aside width="200px">
+        <el-aside style="margin-right: 5%; margin-top: 5%; overflow: hidden">
           <div v-for="(item,index) in items" v-bind:key="index">
             <card :title = "item" @click="toDetailView"></card>
           </div>
@@ -45,5 +44,8 @@ export default {
 </script>
 
 <style scoped>
+.el-container{
+  min-width: fit-content;
+}
 
 </style>
