@@ -1,17 +1,17 @@
 <template>
     <el-container>
-      <el-header>
+      <el-header style="position: fixed; z-index: 2023; top: 10px; left: 10%; right: 10%; ">
         <search-bar></search-bar>
       </el-header>
-      <el-container style="display: flex" >
+      <el-container style="display: flex; z-index: 1; padding-top: 100px; top: 100px;" >
         <el-main style = "overflow: clip;">
-          <video-player w="100%" h="100%" :file-name= this.$route.params.id></video-player>
+          <video-player w="100%" h="100%" :file-name= this.id></video-player>
         </el-main>
         <el-aside style="margin-right: 5%; margin-top: 5%; overflow: hidden">
           <div v-for="(item,index) in items" v-bind:key="index">
-            <div v-if="!item.startsWith('.')">
+<!--            <div v-if="!item.startsWith('.')">-->
               <card :title = "removePrefix(item)" @click="toDetailView(removePrefix(item))" v-if="index < 3"></card>
-            </div>
+<!--            </div>-->
           </div>
         </el-aside>
     </el-container>
@@ -32,6 +32,7 @@ export default {
   data () {
     return {
       items: this.$store.getters.getItems,
+      id: this.$route.params.id
     }
   },
   methods:{
@@ -39,6 +40,7 @@ export default {
       this.$router.push({
         path: `/detailView/${id}`,
       })
+      // location.reload()
     },
     removePrefix(item){
       var ans = item;

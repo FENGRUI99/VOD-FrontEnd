@@ -1,7 +1,7 @@
 <template>
       <el-card :body-style="{ padding: '0px'}" class="my-card" @mouseenter="zoomIn" @mouseleave="zoomOut" shadow="hover" style="width: 100%;height: 100%;border-radius: 8px" :style="{boxShadow: '--el-box-shadow-dark'}">
         <img
-            :src="'src/assets/' + title.split('.')[0] + '.png'"
+            :src="'/src/assets/' + title.split('.')[0] + '.png'"
             class="image"
         />
         <div style="padding: 1px; font-size: small" >
