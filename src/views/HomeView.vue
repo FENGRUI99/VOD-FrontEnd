@@ -8,7 +8,9 @@
         <el-main style = "overflow: clip">
           <div class="card-group">
             <div class="card-row" v-for="(item,index) in items" v-bind:key="index">
-                <card class="card" :title = "item" @click="toDetailView"></card>
+<!--              <div v-if="!removePrefix(item).startsWith('.')">-->
+                <card class="card" :title = "removePrefix(item)" @click="toDetailView(removePrefix(item))"></card>
+<!--              </div>-->
             </div>
           </div>
 
@@ -35,21 +37,26 @@ export default {
     }
   },
   methods:{
-    toDetailView () {
+    toDetailView (item) {
+      let id = item;
       this.$router.push({
-        path: '/detailView',
-        name: 'DetailView',
+        path: `/detailView/${id}`,
       })
     },
     requetItems(){
       this.axios.get('http://localhost:18343/').then((response) => {
         this.$store.commit('setItems', response.data)
         this.items = this.$store.getters.getItems
-        // console.log(this.$store.getters.getItems)
-        // console.log(response.data)
       }).catch((response) => {
         console.log(response)
       })
+    },
+    removePrefix(item){
+      var ans = item;
+      if (item.startsWith("content/")){
+        ans = item.substring(8);
+      }
+      return ans;
     }
   },
   created() {

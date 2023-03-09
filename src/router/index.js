@@ -18,7 +18,7 @@ const router = createRouter({
       redirect: '/'
     },
     {
-      path: '/detailView',
+      path: '/detailView/:id',
       name: 'DetailView',
       component: DetailView,
     }

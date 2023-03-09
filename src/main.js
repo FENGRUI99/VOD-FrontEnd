@@ -11,20 +11,32 @@ import 'vue3-video-play/dist/style.css' // 引入css
 import 'element-plus/dist/index.css'
 import 'ant-design-vue/dist/antd.css'; // or 'ant-design-vue/dist/antd.less'
 import './assets/main.css'
-
 // Create a new store instance.
 const store = createStore({
     //全局变量
     state () {
         return {
-            items:[]
+            items:[],
+            len: 0,
         }
     },
     // vuex中的方法, 在组件中使用commit来调用
     mutations: {
         setItems(state, items){
-            if (items.length != state.items.length){
-                state.items = items
+            if (items.length != state.len){
+                state.len = items.length
+                state.items = []
+                let index = 0
+                for (let i = 0; i < items.length; i++){
+                    let item = items[i]
+                    if (item.startsWith('content/')){
+                        item = item.split('/')[1]
+                    }
+                    if (!item.startsWith('.')){
+                        state.items[index] = items[i]
+                        index++
+                    }
+                }
             }
         }
     },

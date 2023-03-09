@@ -26,9 +26,9 @@ export default {
       })
     },
     toDetailView () {
+      let id = this.input;
       this.$router.push({
-        path: '/detailView',
-        name: 'DetailView',
+        path: `/detailView/${id}`,
       })
     },
   }
