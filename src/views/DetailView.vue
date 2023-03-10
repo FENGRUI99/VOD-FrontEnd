@@ -6,7 +6,7 @@
         <search-bar></search-bar>
         </div>
       </el-header>
-      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1; margin-top: 300px">
+      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1">
         <el-main style = "overflow: clip;">
           <video-player w="100%" h="100%" v-model:file-name= this.$route.params.id></video-player>
         </el-main>

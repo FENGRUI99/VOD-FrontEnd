@@ -7,7 +7,7 @@
             <searchBar></searchBar>
           </div>
         </el-header>
-        <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1; margin-top: 300px">
+        <el-container style="display: flex; z-index: 1; flex-direction: column-reverse">
         <el-main style = "overflow: clip">
           <div class="card-group">
             <div class="card-row" v-for="(item,index) in items" v-bind:key="index">
@@ -29,6 +29,7 @@
 import Card from '../components/Card.vue'
 import SearchBar from "../components/SearchBar.vue";
 import Logo from "@/components/Logo.vue";
+
 export default {
   name: "HomeView",
   components:{
@@ -72,6 +73,7 @@ export default {
     clearInterval(this.intervalId)
     next()
   },
+
 }
 </script>
 
@@ -84,6 +86,7 @@ export default {
    .card-group {
      display: flex;
      flex-wrap: wrap;
+     /*max-height: 600px;*/
    }
 
    .card-row {
@@ -91,6 +94,20 @@ export default {
      box-sizing: border-box;
      padding: 10px;
    }
+
+   /*@media (max-width: 768px) {*/
+   /*  .card-row {*/
+   /*    width: 50%;*/
+   /*    padding: 5px;*/
+   /*  }*/
+   /*}*/
+
+   /*@media (max-width: 480px) {*/
+   /*  .card-row {*/
+   /*    width: 100%;*/
+   /*    padding: 5px;*/
+   /*  }*/
+   /*}*/
 
 
 </style>

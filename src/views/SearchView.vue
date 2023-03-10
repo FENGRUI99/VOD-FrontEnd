@@ -7,7 +7,7 @@
           <searchBar></searchBar>
         </div>
       </el-header>
-      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1; margin-top: 300px">
+      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1">
         <el-main style = "overflow: clip">
           <div class="card-group">
             <div class="card-row" v-for="(item,index) in items" v-bind:key="index">
