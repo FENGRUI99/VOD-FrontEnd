@@ -38,6 +38,21 @@ const store = createStore({
                     }
                 }
             }
+        },
+        setItemsWithSearch(state, items){
+            state.len = items.length
+            state.items = []
+            let index = 0
+            for (let i = 0; i < items.length; i++){
+                let item = items[i].content
+                if (item.startsWith('content/')){
+                    item = item.split('/')[1]
+                }
+                if (!item.startsWith('.')){
+                    state.items[index] = items[i].content
+                    index++
+                }
+            }
         }
     },
     // 计算属性

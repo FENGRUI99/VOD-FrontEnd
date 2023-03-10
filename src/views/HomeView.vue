@@ -2,7 +2,8 @@
     <div class="common-layout">
       <el-container>
         <el-header style="position: fixed; z-index: 2023; top: 10%; left: 10%; right: 10%">
-          <div style="background-color: white; top: 0; right: 0; left: 0; z-index: 2022; border: 200px; width: 100%">
+          <div style="background-color: white; top: 0; right: 0; left: 0; z-index: 2022; border: 200px; width: 100%; display: flex; align-items: center">
+            <logo></logo>
             <searchBar></searchBar>
           </div>
         </el-header>
@@ -27,11 +28,13 @@
 <script>
 import Card from '../components/Card.vue'
 import SearchBar from "../components/SearchBar.vue";
+import Logo from "@/components/Logo.vue";
 export default {
   name: "HomeView",
   components:{
     'searchBar': SearchBar,
     'card': Card,
+    'logo': Logo
   },
   data () {
     return {
@@ -65,8 +68,9 @@ export default {
     this.requetItems()
     this.intervalId = setInterval(this.requetItems, 5000)
   },
-  beforeDestroy() {
+  beforeRouteLeave(to, from, next) {
     clearInterval(this.intervalId)
+    next()
   },
 }
 </script>
