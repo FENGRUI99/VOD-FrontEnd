@@ -36,4 +36,9 @@ export default {
   /*height: 10%;*/
   display: flex;
 }
+span{
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
 </style>

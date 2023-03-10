@@ -1,10 +1,12 @@
 <template>
     <el-container>
-      <el-header style="position: fixed; z-index: 2023; top: 10px; left: 10%; right: 10%; display: flex; align-items: center">
+      <el-header style="position: fixed; z-index: 2023; left: 10%; right: 10%; position: fixed; top: 0">
+        <div style="background-color: white; top: 0; right: 0; left: 0; z-index: 2022; border: 200px; width: 100%; display: flex; align-items: center">
         <logo></logo>
         <search-bar></search-bar>
+        </div>
       </el-header>
-      <el-container style="display: flex; z-index: 1; padding-top: 100px; top: 100px;" >
+      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1; margin-top: 300px">
         <el-main style = "overflow: clip;">
           <video-player w="100%" h="100%" v-model:file-name= this.$route.params.id></video-player>
         </el-main>

@@ -1,13 +1,13 @@
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header style="position: fixed; z-index: 2023; top: 10%; left: 10%; right: 10%">
+      <el-header style="position: fixed; z-index: 2023; left: 10%; right: 10%; position: fixed; top: 0">
         <div style="background-color: white; top: 0; right: 0; left: 0; z-index: 2022; border: 200px; width: 100%; display: flex; align-items: center">
           <logo></logo>
           <searchBar></searchBar>
         </div>
       </el-header>
-      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1">
+      <el-container style="display: flex; padding-top: 10px; top: 10px; z-index: 1; margin-top: 300px">
         <el-main style = "overflow: clip">
           <div class="card-group">
             <div class="card-row" v-for="(item,index) in items" v-bind:key="index">
@@ -76,10 +76,10 @@ export default {
 </script>
 
 <style scoped>
-.el-container{
-  min-width: fit-content;
-  /*position: fixed; z-index: 2023; top: 10px; left: 10%; right: 10%*/
-}
+/*.el-container{*/
+/*  min-width: fit-content;*/
+/*  !*position: fixed; z-index: 2023; top: 10px; left: 10%; right: 10%*!*/
+/*}*/
 
 .card-group {
   display: flex;

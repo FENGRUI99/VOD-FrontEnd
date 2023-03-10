@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/logo.png" style="margin-right: 10px" @click="toHomeView">
+  <img id="logo" src="../assets/logo.png" style="margin-right: 10px; width: 20%; object-fit: contain" @click="toHomeView">
 </template>
 
 <script>
@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style scoped>
-
+  #logo:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
 </style>
