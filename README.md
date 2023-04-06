@@ -1,30 +1,24 @@
-# pinke
+# VOD Front End
 
-This template should help get you started developing with Vue 3 in Vite.
+技术栈:Vue3, axios, ElementPlus
 
-## Recommended IDE Setup
+### 功能
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+展示VOD(Video On Demand)系统实现的功能
 
-## Customize configuration
+- 视频资源来自于多台服务器
+- 模糊搜索功能
+- 展示所有服务器的所有视频
+- 播放视频
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![demo](src/assets/demo.png)
 
-## Project Setup
+### 安装(需配合VOD Web Application一起使用)
 
-```sh
+```shell
+git clone https://github.com/FENGRUI99/VOD-FrontEnd
+cd VOD-FrontEnd
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-# pinkeFrontEnd
